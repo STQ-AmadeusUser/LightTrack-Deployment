@@ -1,0 +1,21 @@
+COMMON:
+  LOG_DIR: 'logs'   # log file
+  CHECKPOINT_DIR: 'snapshot'   # checkpoint file
+  USE_CUDA: True
+  GPUS: '0,1,2,3'
+
+MODEL:
+  ARCH: 'LightTrackM_Subnet'
+  STRIDE: 16
+  EVEN: 0  # or 1
+
+DEMO:
+  RESUME: 'snapshot/LightTrackM.pth'
+  HYPERS:
+    penalty_k: 0.007
+    lr: 0.616
+    window_influence: 0.225
+    small_sz: 256
+    big_sz: 288
+    context_amount: 0.5
+    total_stride: 16
